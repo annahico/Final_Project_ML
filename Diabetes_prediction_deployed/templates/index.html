@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Predictor by annahico</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Diabetes Predictor</h1>
+
+        <div class="form-container">
+            <form action="{{ url_for('predict')}}" method="post">
+                <input class="form-input" type="number" name="pregnancies" placeholder="Number of Pregnancies (e.g. 0)"
+                    required>
+                <input class="form-input" type="number" name="glucose" placeholder="Glucose (mg/dL) (e.g. 80)" required>
+                <input class="form-input" type="number" name="bloodpressure"
+                    placeholder="Blood Pressure (mmHg) (e.g. 80)" required>
+                <input class="form-input" type="number" name="skinthickness" placeholder="Skin Thickness (mm) (e.g. 20)"
+                    required>
+                <input class="form-input" type="number" name="insulin" placeholder="Insulin Level (IU/mL) (e.g. 80)"
+                    required>
+                <input class="form-input" type="number" step="0.1" name="bmi"
+                    placeholder="Body Mass Index (kg/m²) (e.g. 23.1)" required>
+                <input class="form-input" type="number" step="0.01" name="dpf"
+                    placeholder="Diabetes Pedigree Function (e.g. 0.52)" required>
+                <input class="form-input" type="number" name="age" placeholder="Age (years) (e.g. 34)" required>
+
+                <button type="submit" class="btn">Predict</button>
+            </form>
+
+            {% if prediction_text %}
+            <div class="prediction-result">
+                {{ prediction_text }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <footer>Created by annahico</footer>
+</body>
+
+</html>

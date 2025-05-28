@@ -1,0 +1,154 @@
+:root {
+    --primary-color: #ff24a4;
+    --secondary-color: #f899c0;
+    --accent-color: rgb(128, 0, 75);
+    --warning-color: red;
+    --text-color: #fff;
+    --bg-dark: rgba(0, 0, 0, 0.7);
+    --bg-darker: rgba(0, 0, 0, 0.9);
+}
+
+/* Estilos base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1.2px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("../wall.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Título animado */
+h1 {
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 30px;
+    animation: bounceIn 2s infinite alternate;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Campos de entrada */
+.form-input {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--bg-dark);
+    border: 3px solid var(--accent-color);
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 1rem;
+    color: var(--text-color);
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2),
+        0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.form-input::placeholder {
+    color: #ccc;
+}
+
+.form-input:hover {
+    background: var(--bg-darker);
+    border-color: var(--warning-color);
+}
+
+.form-input:focus {
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4),
+        0 1px 1px rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+/* Botón */
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: white;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Resultado */
+.prediction-result {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Pie de página */
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    .form-input {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
