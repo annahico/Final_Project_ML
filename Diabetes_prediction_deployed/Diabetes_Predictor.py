@@ -1,3 +1,4 @@
+import os  # Importamos os para manejar rutas de directorios
 import pickle
 import numpy as np
 import pandas as pd
@@ -61,11 +62,16 @@ def main():
     # Model training
     model = train_model(X, y)
 
-    # Save model
-    with open('diabetes_prediction_model.pkl', 'wb') as f:
+    # Create directory if it doesn't exist
+    os.makedirs('Diabetes_prediction_deployed', exist_ok=True)
+
+    # Save model in the specified directory
+    model_path = os.path.join(
+        'Diabetes_prediction_deployed', 'diabetes_prediction_model.pkl')
+    with open(model_path, 'wb') as f:
         pickle.dump(model, f)
 
-    print("Model trained and saved successfully!")
+    print(f"Model trained and saved successfully at {model_path}!")
 
 
 if __name__ == "__main__":
