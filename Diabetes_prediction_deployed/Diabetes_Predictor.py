@@ -1,4 +1,4 @@
-import os  # Importamos os para manejar rutas de directorios
+import os
 import pickle
 import numpy as np
 import pandas as pd

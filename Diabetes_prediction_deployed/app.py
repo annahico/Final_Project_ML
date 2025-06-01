@@ -3,7 +3,6 @@ import pickle
 import numpy as np
 from flask import Flask, render_template, request
 
-# Load model (from same directory as app.py)
 model_path = os.path.join(os.path.dirname(
     __file__), 'diabetes_prediction_model.pkl')
 classifier = pickle.load(open(model_path, 'rb'))
