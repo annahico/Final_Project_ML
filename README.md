@@ -94,7 +94,7 @@ Feel free to contribute! Submit issues or pull requests. For major changes, open
 
 ## Acknowledgements
 
-- Dataset: [Pima Indians Diabetes Database – Kaggle](https://www.kaggle.com/datasets/johndasilva/diabetes)
+- Dataset: [Diabetes – Kaggle](https://www.kaggle.com/datasets/johndasilva/diabetes)
 - Libraries and Tools:
   - [scikit-learn](https://scikit-learn.org/)
   - [Flask](https://flask.palletsprojects.com/)
