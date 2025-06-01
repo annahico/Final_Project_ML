@@ -1,4 +1,3 @@
-````markdown
 # Diabetes Risk Prediction App
 
 This repository contains a complete machine learning project designed to predict the likelihood of diabetes based on individual health metrics. It includes everything from data exploration and modeling to deploying a functional web app using Flask.
@@ -108,4 +107,4 @@ Feel free to contribute! Submit issues or pull requests. For major changes, open
 Made with ❤️ by **annahico**
 
 💡 *Contributions and suggestions are welcome! Feel free to fork, open issues, or submit pull requests.*
-```
+
