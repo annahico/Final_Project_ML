@@ -21,7 +21,7 @@ def handle_missing_values(df):
     cols_to_impute = ['Glucose', 'BloodPressure',
                       'SkinThickness', 'Insulin', 'BMI']
 
-    # Replace 0 with NaN
+    # Replace 0 with nan ( it doesn't work with NaN)
     df_copy[cols_to_impute] = df_copy[cols_to_impute].replace(0, np.nan)
 
     # Define imputation strategies
