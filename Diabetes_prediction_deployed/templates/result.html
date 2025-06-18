@@ -1,3 +1,4 @@
+<!-- for use this HTML correctly, us in your terminal python app.py -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,21 +9,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/result.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/result.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
 </head>
 
 <body>
     <div class="result-container">
-        {% if prediction==1 %}
+        {% if prediction[0] == 1 %}
         <div class="result-card danger">
-            <h1>Prediction: <span>Oops! You have DIABETES</span></h1>
-            <img src="{{ url_for('static', filename='img/diabetes.gif') }}" alt="Diabetes warning"
-                class="result-image">
+            <h1>Prediction: <span>Oh No! You have DIABETES</span></h1>
+            <img src="{{ url_for('static', filename='img/diabetes.gif') }}" alt="Diabetes warning" class="result-image">
             <p class="advice">Please consult with a healthcare professional for proper diagnosis and treatment.</p>
             <a href="/" class="btn">Back to Predictor</a>
         </div>
-        {% elif prediction==0 %}
+        {% elif prediction[0] == 0 %}
         <div class="result-card safe">
             <h1>Prediction: <span>Great news! You DO NOT have DIABETES</span></h1>
             <img src="{{ url_for('static', filename='img/no-diabetes.gif') }}" alt="Healthy celebration"
